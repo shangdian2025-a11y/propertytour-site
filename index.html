@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-tw="立足台灣・亞洲看房團 | 珠海大灣區房產考察" data-cn="立足台湾・亚洲看房团 | 珠海大湾区房产考察">立足台灣・亞洲看房團 | 珠海大灣區房產考察</title>
+  <meta name="description" content="由台灣專業團隊帶領，前進珠海大灣區看房。提供最新珠海房產資訊，協助台灣人在大陸置產。" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif; color: #333; background: #fff; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --navy: #1a2744;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --bg-light: #f8f6f0;
+      --text-dark: #1a1a1a;
+      --text-grey: #666;
+      --border: #e0d8c8;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(26, 39, 68, 0.97);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .navbar-logo {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .navbar-logo span { color: var(--gold); }
+    .navbar-right { display: flex; align-items: center; gap: 16px; }
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .lang-toggle:hover { background: var(--gold); color: #fff; }
+    .nav-cta {
+      background: var(--gold);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); color: var(--navy); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #2c3e6b 50%, #1a3a5c 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1518473011698-a7acb0dbfef7?w=1600&q=80') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      position: relative;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+      margin-top: 56px;
+      position: relative;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--gold); }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 5%; }
+    .section-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 4px 14px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      color: var(--text-grey);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+    .center { text-align: center; }
+    .center .section-sub { margin-left: auto; margin-right: auto; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ===== WHY ZHUHAI ===== */
+    .why-section { background: var(--bg-light); }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 3px solid var(--gold);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--text-grey); line-height: 1.7; }
+
+    /* ===== PROPERTIES ===== */
+    .prop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 960px) { .prop-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .prop-grid { grid-template-columns: 1fr; } }
+    .prop-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+      background: #fff;
+    }
+    .prop-card:hover { transform: translateY(-4px); }
+    .prop-img {
+      width: 100%; height: 210px;
+      background: linear-gradient(135deg, #2c3e6b, #1a3a5c);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .prop-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .prop-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .prop-body { padding: 20px 20px 24px; }
+    .prop-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .prop-loc { font-size: 0.85rem; color: var(--text-grey); margin-bottom: 12px; display: flex; align-items: center; gap: 4px; }
+    .prop-price { font-size: 1.4rem; font-weight: 800; color: var(--gold); margin-bottom: 12px; }
+    .prop-price span { font-size: 0.8rem; font-weight: 400; color: var(--text-grey); }
+    .prop-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .prop-tag {
+      background: var(--bg-light);
+      color: var(--navy);
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* ===== TOUR STEPS ===== */
+    .tour-section { background: var(--navy); color: #fff; }
+    .tour-section .section-title { color: #fff; }
+    .tour-section .section-sub { color: rgba(255,255,255,0.7); }
+    .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .steps::before {
+      content: '';
+      position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+      background: var(--gold); opacity: 0.3;
+    }
+    .step { display: flex; gap: 24px; align-items: flex-start; padding: 24px 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 800; color: #fff;
+      position: relative; z-index: 1;
+    }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .step-content p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
+
+    /* ===== ADVANTAGES ===== */
+    .adv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .adv-item { display: flex; gap: 16px; align-items: flex-start; }
+    .adv-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .adv-text h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .adv-text p { font-size: 0.875rem; color: var(--text-grey); line-height: 1.7; }
+
+    /* ===== CTA / SIGNUP ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy), #2c3e6b);
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section .section-title { color: #fff; }
+    .cta-section .section-sub { color: rgba(255,255,255,0.75); }
+    .contact-cards {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+      margin-top: 36px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 24px 32px;
+      min-width: 180px;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .contact-card:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: translateY(-3px); }
+    .contact-card .c-icon { font-size: 2rem; margin-bottom: 10px; }
+    .contact-card .c-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+    .contact-card .c-val { font-size: 1rem; font-weight: 700; color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.8rem;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .adv-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      .steps::before { left: 22px; }
+      .step-num { width: 44px; height: 44px; font-size: 1rem; }
+      .navbar-logo { font-size: 0.9rem; }
+    }
+
+    /* ===== CITY TABS ===== */
+    .city-tab {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-grey);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .city-tab:hover { border-color: var(--gold); color: var(--navy); }
+    .city-tab.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+    /* ===== REGION TABS ===== */
+    .region-tab {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-grey);
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .region-tab:hover { border-color: var(--gold); color: var(--navy); }
+    .region-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  /* ===== MODAL ===== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 2000;
+    background: rgba(10,18,40,0.82); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: #fff; border-radius: 16px; padding: 40px 36px;
+    width: 92%; max-width: 480px; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: modalIn 0.25s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform: translateY(24px); } to { opacity:1; transform: none; } }
+  .modal-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; font-size: 1.6rem;
+    color: #999; cursor: pointer; line-height: 1;
+  }
+  .modal-close:hover { color: #333; }
+  .modal-title {
+    color: var(--navy); font-size: 1.4rem; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .modal-sub { color: var(--text-grey); font-size: 0.88rem; margin-bottom: 24px; }
+  .modal-form .form-group { margin-bottom: 16px; }
+  .modal-form label { display: block; font-size: 0.85rem; color: #555; margin-bottom: 5px; font-weight: 600; }
+  .modal-form input, .modal-form select, .modal-form textarea {
+    width: 100%; padding: 10px 14px;
+    border: 1.5px solid #ddd; border-radius: 8px;
+    font-size: 0.95rem; font-family: inherit;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .modal-form input:focus, .modal-form select:focus, .modal-form textarea:focus { border-color: var(--gold); }
+  .modal-form textarea { height: 80px; resize: none; }
+  .modal-submit {
+    width: 100%; padding: 13px;
+    background: var(--navy); color: #fff;
+    border: none; border-radius: 8px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+  .modal-submit:hover { background: var(--gold); color: var(--navy); }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="navbar-logo" data-tw="🏠 立足台灣・<span style='color:var(--gold)'>亞洲看房團</span>" data-cn="🏠 立足台湾・<span style='color:var(--gold)'>亚洲看房团</span>">
+    🏠 立足台灣・<span>亞洲看房團</span>
+  </div>
+  <div class="navbar-right">
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">切換簡體</button>
+    <a href="#" onclick="openModal(); return false;" class="nav-cta" data-tw="立即報名" data-cn="立即报名">立即報名</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-badge" data-tw="🇹🇼 台灣專業團隊・珠海大灣區首選" data-cn="🇹🇼 台湾专业团队・珠海大湾区首选">
+    🇹🇼 台灣專業團隊・珠海大灣區首選
+  </div>
+  <h1 data-tw="立足台灣<br><em>帶您前進珠海置產</em>" data-cn="立足台湾<br><em>带您前进珠海置产</em>">
+    立足台灣<br><em>帶您前進珠海置產</em>
+  </h1>
+  <p data-tw="由熟悉兩岸市場的台灣團隊帶領，深入珠海大灣區核心地帶，親眼看房、現場評估，讓您安心投資置產。" data-cn="由熟悉两岸市场的台湾团队带领，深入珠海大湾区核心地带，亲眼看房、现场评估，让您安心投资置产。">
+    由熟悉兩岸市場的台灣團隊帶領，深入珠海大灣區核心地帶，親眼看房、現場評估，讓您安心投資置產。
+  </p>
+  <div class="hero-btns">
+    <a href="#" onclick="openModal(); return false;" class="btn-primary" data-tw="📋 立即報名考察團" data-cn="📋 立即报名考察团">📋 立即報名考察團</a>
+    <a href="#properties" class="btn-outline" data-tw="🏘 瀏覽最新房源" data-cn="🏘 浏览最新房源">🏘 瀏覽最新房源</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label" data-tw="成功協助台灣買家" data-cn="成功协助台湾买家">成功協助台灣買家</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label" data-tw="合作開發商" data-cn="合作开发商">合作開發商</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label" data-tw="考察行程" data-cn="考察行程">考察行程</div>
+      <div class="stat-num">4天3夜</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">¥16.8萬起</div>
+      <div class="stat-label" data-tw="珠海房產入手全款價" data-cn="珠海房产入手全款价">珠海房產入手全款價</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ZHUHAI ===== -->
+<section class="why-section">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag" data-tw="為什麼選珠海" data-cn="为什么选珠海">為什麼選珠海</span>
+      <h2 class="section-title" data-tw="大灣區核心・台灣人最佳進場時機" data-cn="大湾区核心・台湾人最佳进场时机">大灣區核心・台灣人最佳進場時機</h2>
+      <p class="section-sub" data-tw="珠海緊鄰澳門、香港，是大灣區少數仍有合理房價的核心城市，現在是台灣投資人布局的黃金時機。" data-cn="珠海紧邻澳门、香港，是大湾区少数仍有合理房价的核心城市，现在是台湾投资人布局的黄金时机。">
+        珠海緊鄰澳門、香港，是大灣區少數仍有合理房價的核心城市，現在是台灣投資人布局的黃金時機。
+      </p>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-icon">🌉</div>
+        <h3 data-tw="毗鄰港澳・交通便利" data-cn="毗邻港澳・交通便利">毗鄰港澳・交通便利</h3>
+        <p data-tw="港珠澳大橋串聯港澳，至香港機場僅40分鐘，國際往來極其方便。" data-cn="港珠澳大桥串联港澳，至香港机场仅40分钟，国际往来极其方便。">港珠澳大橋串聯港澳，至香港機場僅40分鐘，國際往來極其方便。</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📈</div>
+        <h3 data-tw="大灣區政策紅利" data-cn="大湾区政策红利">大灣區政策紅利</h3>
+        <p data-tw="橫琴粵澳深度合作區持續釋利，吸引大量企業進駐，人口與需求穩定增長。" data-cn="横琴粤澳深度合作区持续释利，吸引大量企业进驻，人口与需求稳定增长。">橫琴粵澳深度合作區持續釋利，吸引大量企業進駐，人口與需求穩定增長。</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">💰</div>
+        <h3 data-tw="房價仍低・潛力大" data-cn="房价仍低・潜力大">房價仍低・潛力大</h3>
+        <p data-tw="相比深圳、廣州，珠海房價親民許多，80萬人民幣起即可入手品質好房。" data-cn="相比深圳、广州，珠海房价亲民许多，80万人民币起即可入手品质好房。">相比深圳、廣州，珠海房價親民許多，80萬人民幣起即可入手品質好房。</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🌊</div>
+        <h3 data-tw="海濱城市・生活品質高" data-cn="海滨城市・生活品质高">海濱城市・生活品質高</h3>
+        <p data-tw="珠海空氣品質全國前茅，海濱自然環境優美，退休養老、自住皆宜。" data-cn="珠海空气品质全国前茅，海滨自然环境优美，退休养老、自住皆宜。">珠海空氣品質全國前茅，海濱自然環境優美，退休養老、自住皆宜。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPERTIES ===== -->
+<section id="properties">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag" data-tw="亞洲精選房源" data-cn="亚洲精选房源">亞洲精選房源</span>
+      <h2 class="section-title" data-tw="立足台灣・佈局亞洲" data-cn="立足台湾・布局亚洲">立足台灣・佈局亞洲</h2>
+      <p class="section-sub" data-tw="從珠海出發，逐步拓展大陸、東南亞、日本市場，台灣專業團隊帶您一站式看房。" data-cn="从珠海出发，逐步拓展大陆、东南亚、日本市场，台湾专业团队带您一站式看房。">
+        從珠海出發，逐步拓展大陸、東南亞、日本市場，台灣專業團隊帶您一站式看房。
+      </p>
+    </div>
+
+    <!-- 地區 Tabs -->
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;" class="reveal">
+      <button class="region-tab active" onclick="switchRegion('china')" id="tab-china">🇨🇳 大陸・中國</button>
+      <button class="region-tab" onclick="switchRegion('thailand')" id="tab-thailand">🇹🇭 泰國</button>
+      <button class="region-tab" onclick="switchRegion('vietnam')" id="tab-vietnam">🇻🇳 越南</button>
+      <button class="region-tab" onclick="switchRegion('japan')" id="tab-japan">🇯🇵 日本</button>
+    </div>
+
+    <!-- 大陸 -->
+    <div id="region-china" class="prop-region">
+      <!-- 城市篩選 -->
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;">
+        <button class="city-tab active" onclick="switchCity('all')" id="city-all" data-tw="🇨🇳 全部" data-cn="🇨🇳 全部">🇨🇳 全部</button>
+        <button class="city-tab" onclick="switchCity('zhuhai')" id="city-zhuhai" data-tw="📍 珠海" data-cn="📍 珠海">📍 珠海</button>
+        <button class="city-tab" onclick="switchCity('zhongshan')" id="city-zhongshan" data-tw="📍 中山" data-cn="📍 中山">📍 中山</button>
+      </div>
+      <div class="prop-grid">
+      <!-- 房源 1：星滙商務中心 -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="skyml-exterior.jpg" alt="星滙商務中心外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 即將交屋" data-cn="🔥 即将交房">🔥 即將交屋</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="星滙商務中心 SKYML" data-cn="星汇商务中心 SKYML">星滙商務中心 SKYML</div>
+          <div class="prop-loc" data-tw="📍 珠海市香洲區跨境二路33號" data-cn="📍 珠海市香洲区跨境二路33号">📍 珠海市香洲區跨境二路33號</div>
+          <div class="prop-price">¥83萬起 <span data-tw="/ 17,000元/㎡" data-cn="/ 17,000元/㎡">/ 17,000元/㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="2025年12月31日交屋・138套SOHO" data-cn="2025年12月31日交房・138套SOHO">2025年12月31日交屋・138套SOHO</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="步行10分鐘到澳門" data-cn="步行10分钟到澳门">步行10分鐘到澳門</span>
+            <span class="prop-tag" data-tw="270°全海景" data-cn="270°全海景">270°全海景</span>
+            <span class="prop-tag" data-tw="49㎡精裝SOHO" data-cn="49㎡精装SOHO">49㎡精裝SOHO</span>
+            <span class="prop-tag" data-tw="跨境通關憑證" data-cn="跨境通关凭证">跨境通關憑證</span>
+            <span class="prop-tag" data-tw="送10年車位" data-cn="送10年车位">送10年車位</span>
+          </div>
+          <div style="margin-top:12px; background:#fff8e6; border:1px solid #f0c040; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#b8860b; font-weight:600;" data-tw="⚡ 車位優惠名額有限，送完即止" data-cn="⚡ 车位优惠名额有限，送完即止">⚡ 車位優惠名額有限，送完即止</div>
+        </div>
+      </div>
+      <!-- 房源 2：華德同裕・璞樾花園 -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="pueyue-exterior.jpg" alt="華德同裕璞樾花園入口" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現房即住" data-cn="✅ 现房即住">✅ 現房即住</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="華德同裕・璞樾花園" data-cn="华德同裕・璞玥花园">華德同裕・璞樾花園</div>
+          <div class="prop-loc" data-tw="📍 珠海市斗門區湖心新城" data-cn="📍 珠海市斗门区湖心新城">📍 珠海市斗門區湖心新城</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 80-138㎡</span>" data-cn="洽询最新优惠 <span>/ 80-138㎡</span>">洽詢最新優惠 <span>/ 80-138㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現房出售・即買即辦證・住宅70年產權" data-cn="现房出售・即买即办证・住宅70年产权">現房出售・即買即辦證・住宅70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="萬科物業" data-cn="万科物业">萬科物業</span>
+            <span class="prop-tag" data-tw="四大公園環繞" data-cn="四大公园环绕">四大公園環繞</span>
+            <span class="prop-tag" data-tw="公辦學校" data-cn="公办学校">公辦學校</span>
+            <span class="prop-tag" data-tw="省級宜居示範區" data-cn="省级宜居示范区">省級宜居示範區</span>
+          </div>
+          <div style="margin-top:12px; background:#f0faf0; border:1px solid #5cb85c; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#2d7a2d; font-weight:600;" data-tw="🏠 現房！買了立即可以入住" data-cn="🏠 现房！买了立即可以入住">🏠 現房！買了立即可以入住</div>
+        </div>
+      </div>
+      <!-- 房源 3：中澳・湖心印象 -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="huhu-exterior.jpg" alt="中澳湖心印象外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現房即住" data-cn="✅ 现房即住">✅ 現房即住</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="中澳・湖心印象" data-cn="中澳・湖心印象">中澳・湖心印象</div>
+          <div class="prop-loc" data-tw="📍 珠海市斗門區湖心新城" data-cn="📍 珠海市斗门区湖心新城">📍 珠海市斗門區湖心新城</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 76-105㎡</span>" data-cn="洽询最新优惠 <span>/ 76-105㎡</span>">洽詢最新優惠 <span>/ 76-105㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現房實景交付・住宅70年産權・600戶" data-cn="现房实景交付・住宅70年产权・600户">現房實景交付・住宅70年產權・600戶</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="華為鴻蒙智家" data-cn="华为鸿蒙智家">華為鴻蒙智家</span>
+            <span class="prop-tag" data-tw="10大主題會所" data-cn="10大主题会所">10大主題會所</span>
+            <span class="prop-tag" data-tw="零負債開發商" data-cn="零负债开发商">零負債開發商</span>
+            <span class="prop-tag" data-tw="3萬㎡中央園林" data-cn="3万㎡中央园林">3萬㎡中央園林</span>
+          </div>
+          <div style="margin-top:12px; background:#f0f4ff; border:1px solid #4a6cf7; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#2d4a9a; font-weight:600;" data-tw="🤖 整合華為鴻蒙智家・全屋智能生活" data-cn="🤖 整合华为鸿蒙智家・全屋智能生活">🤖 整合華為鴻蒙智家・全屋智能生活</div>
+        </div>
+      </div>
+      <!-- 房源 4：華發觀山水・悅湖城（中山） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="huafa-exterior.jpg" alt="華發觀山水悅湖城外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🏛 國企品質" data-cn="🏛 国企品质">🏛 國企品質</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="華發觀山水・悅湖城" data-cn="华发观山水・悦湖城">華發觀山水・悅湖城</div>
+          <div class="prop-loc" data-tw="📍 中山市三鄉鎮文化中路" data-cn="📍 中山市三乡镇文化中路">📍 中山市三鄉鎮文化中路</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 85-119㎡</span>" data-cn="洽询最新优惠 <span>/ 85-119㎡</span>">洽詢最新優惠 <span>/ 85-119㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="大灣區幾何中心・五桂山天然湖景・3000+業主" data-cn="大湾区几何中心・五桂山天然湖景・3000+业主">大灣區幾何中心・五桂山天然湖景・3000+業主</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="國企華發" data-cn="国企华发">國企華發</span>
+            <span class="prop-tag" data-tw="湖景山景" data-cn="湖景山景">湖景山景</span>
+            <span class="prop-tag" data-tw="中珠雙城交匯" data-cn="中珠双城交汇">中珠雙城交匯</span>
+            <span class="prop-tag" data-tw="名校環伺" data-cn="名校环伺">名校環伺</span>
+          </div>
+          <div style="margin-top:12px; background:#fff4e6; border:1px solid #e6960c; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#8a5a00; font-weight:600;" data-tw="🏛 國企開發・買房零風險・品質有保障" data-cn="🏛 国企开发・买房零风险・品质有保障">🏛 國企開發・買房零風險・品質有保障</div>
+        </div>
+      </div>
+
+      <!-- 房源 5：敏捷・錦繡海灣城（中山） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="jxhwc-exterior.jpg" alt="敏捷錦繡海灣城鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🌊 濱海溫泉大城" data-cn="🌊 滨海温泉大城">🌊 濱海溫泉大城</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="敏捷・錦繡海灣城" data-cn="敏捷・锦绣海湾城">敏捷・錦繡海灣城</div>
+          <div class="prop-loc" data-tw="📍 中山市翠亨新區南朗" data-cn="📍 中山市翠亨新区南朗">📍 中山市翠亨新區南朗</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 88-143㎡</span>" data-cn="洽询最新优惠 <span>/ 88-143㎡</span>">洽詢最新優惠 <span>/ 88-143㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="8000畝超級大盤・規劃10萬人口・深中通道橋頭堡" data-cn="8000亩超级大盘・规划10万人口・深中通道桥头堡">8000畝超級大盤・規劃10萬人口・深中通道橋頭堡</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="4.9km海岸線" data-cn="4.9km海岸线">4.9km海岸線</span>
+            <span class="prop-tag" data-tw="深海鐳溫泉" data-cn="深海镭温泉">深海鐳溫泉</span>
+            <span class="prop-tag" data-tw="30分鐘到深圳" data-cn="30分钟到深圳">30分鐘到深圳</span>
+            <span class="prop-tag" data-tw="500米到珠海" data-cn="500米到珠海">500米到珠海</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f4fc; border:1px solid #2196F3; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#0d47a1; font-weight:600;" data-tw="🏖 深圳房價1/10・比珠海便宜約100萬" data-cn="🏖 深圳房价1/10・比珠海便宜约100万">🏖 深圳房價1/10・比珠海便宜約100萬</div>
+        </div>
+      </div>
+
+      <!-- 房源 6：朗詩新城・悅境（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="langshi-exterior.jpg" alt="朗詩新城悅境鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🏆 港股百強上市" data-cn="🏆 港股百强上市">🏆 港股百強上市</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="朗詩新城・悅境" data-cn="朗诗新城・悦境">朗詩新城・悅境</div>
+          <div class="prop-loc" data-tw="📍 中山市坦洲鎮（珠中交界）" data-cn="📍 中山市坦洲镇（珠中交界）">📍 中山市坦洲鎮（珠中交界）</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 79-139㎡</span>" data-cn="洽询最新优惠 <span>/ 79-139㎡</span>">洽詢最新優惠 <span>/ 79-139㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="約23萬㎡精品大城・10分鐘珠海主城・1/4珠海香洲價" data-cn="约23万㎡精品大城・10分钟珠海主城・1/4珠海香洲价">約23萬㎡精品大城・10分鐘珠海主城・1/4珠海香洲價</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="1-4房" data-cn="1-4房">1-4房</span>
+            <span class="prop-tag" data-tw="港股上市朗詩" data-cn="港股上市朗诗">港股上市朗詩</span>
+            <span class="prop-tag" data-tw="超3萬㎡商業街" data-cn="超3万㎡商业街">超3萬㎡商業街</span>
+            <span class="prop-tag" data-tw="5大機場圈" data-cn="5大机场圈">5大機場圈</span>
+            <span class="prop-tag" data-tw="山姆商圈10分" data-cn="山姆商圈10分">山姆商圈10分</span>
+          </div>
+          <div style="margin-top:12px; background:#f3e8ff; border:1px solid #9b59b6; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#6a1a8a; font-weight:600;" data-tw="💎 珠中價格洼地・一期已收1000+業主信任" data-cn="💎 珠中价格洼地・一期已收1000+业主信任">💎 珠中價格洼地・一期已收1000+業主信任</div>
+        </div>
+      </div>
+
+      <!-- 房源 7：中澳春城五期・鉑瑞ONE（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="zhongao-chun-exterior.jpg" alt="中澳春城鉑瑞ONE鳥瞰" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🏙 80萬㎡超級大城" data-cn="🏙 80万㎡超级大城">🏙 80萬㎡超級大城</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="中澳春城五期・鉑瑞ONE" data-cn="中澳春城五期・铂瑞ONE">中澳春城五期・鉑瑞ONE</div>
+          <div class="prop-loc" data-tw="📍 中山市坦洲環市南路131號" data-cn="📍 中山市坦洲环市南路131号">📍 中山市坦洲環市南路131號</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 2025年12月交屋</span>" data-cn="洽询最新优惠 <span>/ 2025年12月交房</span>">洽詢最新優惠 <span>/ 2025年12月交屋</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="80萬㎡花園大城・5499戶・15分鐘到珠海拱北" data-cn="80万㎡花园大城・5499户・15分钟到珠海拱北">80萬㎡花園大城・5499戶・15分鐘到珠海拱北</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="中澳3.0智慧標準" data-cn="中澳3.0智慧标准">中澳3.0智慧標準</span>
+            <span class="prop-tag" data-tw="一橋到珠海" data-cn="一桥到珠海">一橋到珠海</span>
+            <span class="prop-tag" data-tw="3萬㎡商業街" data-cn="3万㎡商业街">3萬㎡商業街</span>
+            <span class="prop-tag" data-tw="10萬㎡東南亞園林" data-cn="10万㎡东南亚园林">10萬㎡東南亞園林</span>
+            <span class="prop-tag" data-tw="1300㎡游泳池" data-cn="1300㎡游泳池">1300㎡游泳池</span>
+          </div>
+          <div style="margin-top:12px; background:#fff0f5; border:1px solid #e91e8c; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#880e4f; font-weight:600;" data-tw="🏊 超大盤・超20萬業主口碑・中澳集團21年品質保證" data-cn="🏊 超大盘・超20万业主口碑・中澳集团21年品质保证">🏊 超大盤・超20萬業主口碑・中澳集團21年品質保證</div>
+        </div>
+      </div>
+
+      <!-- 房源 8：優越香格里（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="yueyue-exterior.jpg" alt="優越香格里鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🛍 自帶13萬㎡購物城" data-cn="🛍 自带13万㎡购物城">🛍 自帶13萬㎡購物城</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="優越香格里" data-cn="优越香格里">優越香格里</div>
+          <div class="prop-loc" data-tw="📍 中山市坦洲鎮界獅南路55號" data-cn="📍 中山市坦洲镇界狮南路55号">📍 中山市坦洲鎮界獅南路55號</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 81-183㎡</span>" data-cn="洽询最新优惠 <span>/ 81-183㎡</span>">洽詢最新優惠 <span>/ 81-183㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="75萬㎡大城・5000戶・澳門源秀集團・70年住宅" data-cn="75万㎡大城・5000户・澳门源秀集团・70年住宅">75萬㎡大城・5000戶・澳門源秀集團・70年住宅</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-5房" data-cn="2-5房">2-5房</span>
+            <span class="prop-tag" data-tw="萬科睿服務" data-cn="万科睿服务">萬科睿服務</span>
+            <span class="prop-tag" data-tw="42%綠化率" data-cn="42%绿化率">42%綠化率</span>
+            <span class="prop-tag" data-tw="海底撈星巴克" data-cn="海底捞星巴克">海底撈星巴克</span>
+            <span class="prop-tag" data-tw="10分鐘珠海" data-cn="10分钟珠海">10分鐘珠海</span>
+          </div>
+          <div style="margin-top:12px; background:#e8faf0; border:1px solid #27ae60; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1a6e40; font-weight:600;" data-tw="🏬 門口自帶13萬㎡購物中心・100+知名品牌進駐" data-cn="🏬 门口自带13万㎡购物中心・100+知名品牌进驻">🏬 門口自帶13萬㎡購物中心・100+知名品牌進駐</div>
+        </div>
+      </div>
+
+      <!-- 房源 9：佳境康城・臻貴園（珠海） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="jiajing-exterior.jpg" alt="佳境康城臻貴園鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🥇 珠澳北第一大盤" data-cn="🥇 珠澳北第一大盘">🥇 珠澳北第一大盤</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="佳境康城・臻貴園" data-cn="佳境康城・臻贵园">佳境康城・臻貴園</div>
+          <div class="prop-loc" data-tw="📍 珠海市云峰路・佳境康城" data-cn="📍 珠海市云峰路・佳境康城">📍 珠海市云峰路・佳境康城</div>
+          <div class="prop-price">¥16,500/㎡起 <span data-tw="/ 105-140㎡" data-cn="/ 105-140㎡">/ 105-140㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="130萬㎡・10000戶・精裝・5分鐘珠海主城" data-cn="130万㎡・10000户・精装・5分钟珠海主城">130萬㎡・10000戶・精裝・5分鐘珠海主城</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="華為全屋智能" data-cn="华为全屋智能">華為全屋智能</span>
+            <span class="prop-tag" data-tw="130%超高實用率" data-cn="130%超高实用率">130%超高實用率</span>
+            <span class="prop-tag" data-tw="西門子大金精裝" data-cn="西门子大金精装">西門子大金精裝</span>
+            <span class="prop-tag" data-tw="港澳直通巴士" data-cn="港澳直通巴士">港澳直通巴士</span>
+          </div>
+          <div style="margin-top:12px; background:#fff3e0; border:1px solid #ff9800; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#e65100; font-weight:600;" data-tw="🏆 珠澳北第一大盤・港澳人士第二家園" data-cn="🏆 珠澳北第一大盘・港澳人士第二家园">🏆 珠澳北第一大盤・港澳人士第二家園</div>
+        </div>
+      </div>
+
+      <!-- 房源 10：佳境康城・14幢樓王（珠海） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="jiajing14-exterior.jpg" alt="佳境康城14幢樓王鳥瞰" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" style="background:#8B0000;" data-tw="👑 頂層樓王" data-cn="👑 顶层楼王">👑 頂層樓王</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="佳境康城・14幢樓王" data-cn="佳境康城・14幢楼王">佳境康城・14幢樓王</div>
+          <div class="prop-loc" data-tw="📍 珠海市云峰路・佳境康城" data-cn="📍 珠海市云峰路・佳境康城">📍 珠海市云峰路・佳境康城</div>
+          <div class="prop-price">¥21,000-23,000/㎡ <span data-tw="/ 133-144㎡" data-cn="/ 133-144㎡">/ 133-144㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="2026年3月交屋・豪華精裝・360°環幕園林樓王" data-cn="2026年3月交房・豪华精装・360°环幕园林楼王">2026年3月交屋・豪華精裝・360°環幕園林樓王</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3+1至4房" data-cn="3+1至4房">3+1至4房</span>
+            <span class="prop-tag" data-tw="104%實用率" data-cn="104%实用率">104%實用率</span>
+            <span class="prop-tag" data-tw="德日美系精裝" data-cn="德日美系精装">德日美系精裝</span>
+            <span class="prop-tag" data-tw="7米層高大堂" data-cn="7米层高大堂">7米層高大堂</span>
+            <span class="prop-tag" data-tw="港資港資骏佳" data-cn="港资骏佳">港資骏佳</span>
+          </div>
+          <div style="margin-top:12px; background:#fdf0f0; border:1px solid #c0392b; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#7b241c; font-weight:600;" data-tw="👑 頂配豪宅・杜拉維特・大金・西門子・道格拉斯全套" data-cn="👑 顶配豪宅・杜拉维特・大金・西门子・道格拉斯全套">👑 頂配豪宅・杜拉維特・大金・西門子・道格拉斯全套</div>
+        </div>
+      </div>
+
+      <!-- 房源 11：譽峯名門（珠坦交界） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="yufeng-exterior.jpg" alt="譽峯名門鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🏙 珠坦城央10年大盤" data-cn="🏙 珠坦城央10年大盘">🏙 珠坦城央10年大盤</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="譽峯名門・26棟新品" data-cn="誉峯名门・26栋新品">譽峯名門・26棟新品</div>
+          <div class="prop-loc" data-tw="📍 珠海香洲・珠坦城央交匯" data-cn="📍 珠海香洲・珠坦城央交汇">📍 珠海香洲・珠坦城央交匯</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 88-110㎡</span>" data-cn="洽询最新优惠 <span>/ 88-110㎡</span>">洽詢最新優惠 <span>/ 88-110㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="60萬㎡・4300戶・70年住宅・8米超大陽台" data-cn="60万㎡・4300户・70年住宅・8米超大阳台">60萬㎡・4300戶・70年住宅・8米超大陽台</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="8米大陽台" data-cn="8米大阳台">8米大陽台</span>
+            <span class="prop-tag" data-tw="南北通透" data-cn="南北通透">南北通透</span>
+            <span class="prop-tag" data-tw="入戶花園贈送" data-cn="入户花园赠送">入戶花園贈送</span>
+            <span class="prop-tag" data-tw="4商圈10分鐘" data-cn="4商圈10分钟">4商圈10分鐘</span>
+          </div>
+          <div style="margin-top:12px; background:#f0f8ff; border:1px solid #1565c0; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#0d47a1; font-weight:600;" data-tw="🏅 10年口碑大盤・山姆/沃爾瑪10分鐘・8大球場" data-cn="🏅 10年口碑大盘・山姆/沃尔玛10分钟・8大球场">🏅 10年口碑大盤・山姆/沃爾瑪10分鐘・8大球場</div>
+        </div>
+      </div>
+
+      <!-- 房源 12：御山風景（中山三鄉） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="yushan-exterior.jpg" alt="御山風景外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" style="background:#7b1fa2;" data-tw="💰 0首付・LOFT投資" data-cn="💰 0首付・LOFT投资">💰 0首付・LOFT投資</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="御山風景" data-cn="御山风景">御山風景</div>
+          <div class="prop-loc" data-tw="📍 中山市三鄉鎮・香山大學旁" data-cn="📍 中山市三乡镇・香山大学旁">📍 中山市三鄉鎮・香山大學旁</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 43-67㎡ LOFT</span>" data-cn="洽询最新优惠 <span>/ 43-67㎡ LOFT</span>">洽詢最新優惠 <span>/ 43-67㎡ LOFT</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現樓發售・4.5米層高・144戶低密度・商業產權" data-cn="现楼发售・4.5米层高・144户低密度・商业产权">現樓發售・4.5米層高・144戶低密度・商業產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="LOFT買一送一" data-cn="LOFT买一送一">LOFT買一送一</span>
+            <span class="prop-tag" data-tw="0首付" data-cn="0首付">0首付</span>
+            <span class="prop-tag" data-tw="開發商包租" data-cn="开发商包租">開發商包租</span>
+            <span class="prop-tag" data-tw="30分鐘拱北" data-cn="30分钟拱北">30分鐘拱北</span>
+            <span class="prop-tag" data-tw="現房即住" data-cn="现房即住">現房即住</span>
+          </div>
+          <div style="margin-top:12px; background:#f3e5f5; border:1px solid #9c27b0; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#6a1b9a; font-weight:600;" data-tw="🏗 港珠澳三城後花園・香山大學旁・租赁需求強勁" data-cn="🏗 港珠澳三城后花园・香山大学旁・租赁需求强劲">🏗 港珠澳三城後花園・香山大學旁・租賃需求強勁</div>
+        </div>
+      </div>
+
+      <!-- 房源 13：雙瑞・藏瓏灣 BAY ONE（珠海主城） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="shuangrui-exterior.jpg" alt="雙瑞藏瓏灣實景鳥瞰" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" style="background:#c62828;" data-tw="🌉 港珠澳橋頭堡100米" data-cn="🌉 港珠澳桥头堡100米">🌉 港珠澳橋頭堡100米</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="雙瑞・藏瓏灣 BAY ONE" data-cn="双瑞・藏珑湾 BAY ONE">雙瑞・藏瓏灣 BAY ONE</div>
+          <div class="prop-loc" data-tw="📍 珠海主城區・濠江頭排・對望澳門" data-cn="📍 珠海主城区・濠江头排・对望澳门">📍 珠海主城區・濠江頭排・對望澳門</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 75-143㎡</span>" data-cn="洽询最新优惠 <span>/ 75-143㎡</span>">洽詢最新優惠 <span>/ 75-143㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="6大口岸1km內・AECOM+HZS+CCD全球大師設計" data-cn="6大口岸1km内・AECOM+HZS+CCD全球大师设计">6大口岸1km內・AECOM+HZS+CCD全球大師設計</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="濠江一線海景" data-cn="濠江一线海景">濠江一線海景</span>
+            <span class="prop-tag" data-tw="35年雙瑞集團" data-cn="35年双瑞集团">35年雙瑞集團</span>
+            <span class="prop-tag" data-tw="漢斯格雅西門子" data-cn="汉斯格雅西门子">漢斯格雅西門子</span>
+            <span class="prop-tag" data-tw="今年買今年住" data-cn="今年买今年住">今年買今年住</span>
+          </div>
+          <div style="margin-top:12px; background:#ffebee; border:1px solid #c62828; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#b71c1c; font-weight:600;" data-tw="👑 珠海主城頂級豪宅・推窗直面澳門繁華・江城山灣四重景觀" data-cn="👑 珠海主城顶级豪宅・推窗直面澳门繁华・江城山湾四重景观">👑 珠海主城頂級豪宅・推窗直面澳門繁華・江城山灣四重景觀</div>
+        </div>
+      </div>
+
+      <!-- 房源 14：金帝世紀城（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="jindi-exterior.jpg" alt="金帝世紀城法式園林" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" style="background:#d4a017;" data-tw="🚌 樓巴直達港澳" data-cn="🚌 楼巴直达港澳">🚌 樓巴直達港澳</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="金帝世紀城・7棟園景豪宅" data-cn="金帝世纪城・7栋园景豪宅">金帝世紀城・7棟園景豪宅</div>
+          <div class="prop-loc" data-tw="📍 中山市坦洲・三大自貿區核心" data-cn="📍 中山市坦洲・三大自贸区核心">📍 中山市坦洲・三大自貿區核心</div>
+          <div class="prop-price" data-tw="首付¥10萬起 <span>/ 80-99㎡ 精裝</span>" data-cn="首付¥10万起 <span>/ 80-99㎡ 精装</span>">首付¥10萬起 <span>/ 80-99㎡ 精裝</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現樓即住・5年免息分期・月供5-6千・70年住宅" data-cn="现楼即住・5年免息分期・月供5-6千・70年住宅">現樓即住・5年免息分期・月供5-6千・70年住宅</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="首付僅10萬" data-cn="首付仅10万">首付僅10萬</span>
+            <span class="prop-tag" data-tw="業主樓巴港澳" data-cn="业主楼巴港澳">業主樓巴港澳</span>
+            <span class="prop-tag" data-tw="格力中央空調" data-cn="格力中央空调">格力中央空調</span>
+            <span class="prop-tag" data-tw="300米超寬樓距" data-cn="300米超宽楼距">300米超寬樓距</span>
+          </div>
+          <div style="margin-top:12px; background:#fffde7; border:1px solid #d4a017; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#7a5800; font-weight:600;" data-tw="🎖 中山首個港澳直通樓巴社區・270°法式園林・即買即住" data-cn="🎖 中山首个港澳直通楼巴社区・270°法式园林・即买即住">🎖 中山首個港澳直通樓巴社區・270°法式園林・即買即住</div>
+        </div>
+      </div>
+
+      <!-- 房源 15：恒裕江山匯（珠海湖心新城） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="hengyu-exterior.jpg" alt="恒裕江山匯夜景實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現樓即住" data-cn="✅ 现楼即住">✅ 現樓即住</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="恒裕江山匯" data-cn="恒裕江山汇">恒裕江山匯</div>
+          <div class="prop-loc" data-tw="📍 珠海斗門區湖心新城・湖心路" data-cn="📍 珠海斗门区湖心新城・湖心路">📍 珠海斗門區湖心新城・湖心路</div>
+          <div class="prop-price">¥15,500-19,000/㎡ <span data-tw="/ 82-110㎡" data-cn="/ 82-110㎡">/ 82-110㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現樓即辦證・3328戶・480畝濕地公園500米" data-cn="现楼即办证・3328户・480亩湿地公园500米">現樓即辦證・3328戶・480畝濕地公園500米</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-3房" data-cn="2-3房">2-3房</span>
+            <span class="prop-tag" data-tw="萬科睿服務" data-cn="万科睿服务">萬科睿服務</span>
+            <span class="prop-tag" data-tw="三面環水5公園" data-cn="三面环水5公园">三面環水5公園</span>
+            <span class="prop-tag" data-tw="精裝寫進合同" data-cn="精装写进合同">精裝寫進合同</span>
+            <span class="prop-tag" data-tw="270°採光" data-cn="270°采光">270°採光</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #2e7d32; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="🌊 珠海版西湖・1萬㎡中庭活水湖泊・貝爾高林大師操刀" data-cn="🌊 珠海版西湖・1万㎡中庭活水湖泊・贝尔高林大师操刀">🌊 珠海版西湖・1萬㎡中庭活水湖泊・貝爾高林大師操刀</div>
+        </div>
+      </div>
+
+      <!-- 房源 16：明溪花園（珠海新香洲） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="mingxi-exterior.jpg" alt="明溪花園鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 主城核心" data-cn="🔥 主城核心">🔥 主城核心</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="明溪花園" data-cn="明溪花园">明溪花園</div>
+          <div class="prop-loc" data-tw="📍 珠海市新香洲・香山湖旁・梅界中路" data-cn="📍 珠海市新香洲・香山湖旁・梅界中路">📍 珠海市新香洲・香山湖旁・梅界中路</div>
+          <div class="prop-price" data-tw="2萬出頭起 <span>/ 69-101㎡</span>" data-cn="2万出头起 <span>/ 69-101㎡</span>">2萬出頭起 <span>/ 69-101㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="三溪科創城・699戶・精裝交付・70年產權" data-cn="三溪科创城・699户・精装交付・70年产权">三溪科創城・699戶・精裝交付・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="珠海智谷" data-cn="珠海智谷">珠海智谷</span>
+            <span class="prop-tag" data-tw="3KM香山湖公園" data-cn="3KM香山湖公园">3KM香山湖公園</span>
+            <span class="prop-tag" data-tw="山姆+奧園商圈" data-cn="山姆+奥园商圈">山姆+奧園商圈</span>
+            <span class="prop-tag" data-tw="文園+香華學區" data-cn="文园+香华学区">文園+香華學區</span>
+          </div>
+          <div style="margin-top:12px; background:#fff3e0; border:1px solid #ff9800; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#e65100; font-weight:600;" data-tw="🏙️ 珠海主城核心性價比首選，萬科設計・精裝成本3500元/㎡" data-cn="🏙️ 珠海主城核心性价比首选，万科设计・精装成本3500元/㎡">🏙️ 珠海主城核心性價比首選，萬科設計・精裝成本3500元/㎡</div>
+        </div>
+      </div>
+
+      <!-- 房源 17：華發金湾府（珠海金湾） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="huafa-jinwan-exterior.jpg" alt="華發金湾府鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 全新10棟上新" data-cn="🔥 全新10栋上新">🔥 全新10棟上新</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="華發金湾府" data-cn="华发金湾府">華發金湾府</div>
+          <div class="prop-loc" data-tw="📍 珠海市金湾・航空新城核心" data-cn="📍 珠海市金湾・航空新城核心">📍 珠海市金湾・航空新城核心</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 88-116㎡</span>" data-cn="洽询最新优惠 <span>/ 88-116㎡</span>">洽詢最新優惠 <span>/ 88-116㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="四代宅・精裝含中央空調・高層+洋房" data-cn="四代宅・精装含中央空调・高层+洋房">四代宅・精裝含中央空調・高層+洋房</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="珠海國企華發" data-cn="珠海国企华发">珠海國企華發</span>
+            <span class="prop-tag" data-tw="珠海新中心" data-cn="珠海新中心">珠海新中心</span>
+            <span class="prop-tag" data-tw="7300㎡公園" data-cn="7300㎡公园">7300㎡公園</span>
+            <span class="prop-tag" data-tw="中央空調精裝" data-cn="中央空调精装">中央空調精裝</span>
+          </div>
+          <div style="margin-top:12px; background:#e3f2fd; border:1px solid #1976d2; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#0d47a1; font-weight:600;" data-tw="🏆 珠海12年銷冠 國企華發・金湾新中心旗艦大作" data-cn="🏆 珠海12年销冠 国企华发・金湾新中心旗舰大作">🏆 珠海12年銷冠 國企華發・金湾新中心旗艦大作</div>
+        </div>
+      </div>
+
+      <!-- 房源 18：金鳳・尚品苑（珠海香洲） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="jinfeng-exterior.jpg" alt="金鳳尚品苑鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現樓即住" data-cn="✅ 现楼即住">✅ 現樓即住</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="金鳳・尚品苑" data-cn="金凤・尚品苑">金鳳・尚品苑</div>
+          <div class="prop-loc" data-tw="📍 珠海市香洲區・鳳凰山麓・港珠澳橋旁" data-cn="📍 珠海市香洲区・凤凰山麓・港珠澳桥旁">📍 珠海市香洲區・鳳凰山麓・港珠澳橋旁</div>
+          <div class="prop-price" data-tw="平層2.3萬起 <span>/ 別墅1800萬起</span>" data-cn="平层2.3万起 <span>/ 别墅1800万起</span>">平層2.3萬起 <span>/ 別墅1800萬起</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="225戶・高層+聯排別墅・現樓即辦證・70年產權" data-cn="225户・高层+联排别墅・现楼即办证・70年产权">225戶・高層+聯排別墅・現樓即辦證・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="平層+別墅" data-cn="平层+别墅">平層+別墅</span>
+            <span class="prop-tag" data-tw="鳳凰山麓" data-cn="凤凰山麓">鳳凰山麓</span>
+            <span class="prop-tag" data-tw="背山望海" data-cn="背山望海">背山望海</span>
+            <span class="prop-tag" data-tw="別墅200%實用率" data-cn="别墅200%实用率">別墅200%實用率</span>
+            <span class="prop-tag" data-tw="中山大學第五醫院" data-cn="中山大学第五医院">中山大學第五醫院</span>
+          </div>
+          <div style="margin-top:12px; background:#f3e5f5; border:1px solid #9c27b0; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#6a1b9a; font-weight:600;" data-tw="🏰 珠海城區稀缺聯排別墅・超200%實用率・贈3-6車位" data-cn="🏰 珠海城区稀缺联排别墅・超200%实用率・赠3-6车位">🏰 珠海城區稀缺聯排別墅・超200%實用率・贈3-6車位</div>
+        </div>
+      </div>
+
+      <!-- 房源 19：海逸假期花園（珠海斗門） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="hoiyat-exterior.jpg" alt="海逸假期花園別墅外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現樓精裝" data-cn="✅ 现楼精装">✅ 現樓精裝</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="海逸假期花園" data-cn="海逸假期花园">海逸假期花園</div>
+          <div class="prop-loc" data-tw="📍 珠海斗門白蕉路2988號" data-cn="📍 珠海斗门白蕉路2988号">📍 珠海斗門白蕉路2988號</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 218-272㎡</span>" data-cn="洽询最新优惠 <span>/ 218-272㎡</span>">洽詢最新優惠 <span>/ 218-272㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="10棟40套・精裝別墅・實用率最高150%・現樓" data-cn="10栋40套・精装别墅・实用率最高150%・现楼">10棟40套・精裝別墅・實用率最高150%・現樓</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="上疊+下疊" data-cn="上叠+下叠">上疊+下疊</span>
+            <span class="prop-tag" data-tw="住宅價買別墅" data-cn="住宅价买别墅">住宅價買別墅</span>
+            <span class="prop-tag" data-tw="私家花園全贈" data-cn="私家花园全赠">私家花園全贈</span>
+            <span class="prop-tag" data-tw="90分鐘到香港" data-cn="90分钟到香港">90分鐘到香港</span>
+            <span class="prop-tag" data-tw="即買即裝修" data-cn="即买即装修">即買即裝修</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #388e3c; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="🏡 買兩層送兩層・贈送100+㎡・有天有地私家花園" data-cn="🏡 买两层送两层・赠送100+㎡・有天有地私家花园">🏡 買兩層送兩層・贈送100+㎡・有天有地私家花園</div>
+        </div>
+      </div>
+
+      <!-- 房源 20：華發天茗 UNION BAY（珠海十字門） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="huafa-unionbay-exterior2.jpg" alt="華發天茗UNION BAY三棟高層效果圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 港珠澳深融首站" data-cn="🔥 港珠澳深融首站">🔥 港珠澳深融首站</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="華發・天茗 UNION BAY" data-cn="华发・天茗 UNION BAY">華發・天茗 UNION BAY</div>
+          <div class="prop-loc" data-tw="📍 珠海十字門中央商務區" data-cn="📍 珠海十字门中央商务区">📍 珠海十字門中央商務區</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 58-85㎡</span>" data-cn="洽询最新优惠 <span>/ 58-85㎡</span>">洽詢最新優惠 <span>/ 58-85㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="1232戶・3棟29層・精裝・70年住宅・2026年首批" data-cn="1232户・3栋29层・精装・70年住宅・2026年首批">1232戶・3棟29層・精裝・70年住宅・2026年首批</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-3房" data-cn="2-3房">2-3房</span>
+            <span class="prop-tag" data-tw="十字門CBD" data-cn="十字门CBD">十字門CBD</span>
+            <span class="prop-tag" data-tw="240萬㎡底盤" data-cn="240万㎡底盘">240萬㎡底盤</span>
+            <span class="prop-tag" data-tw="對標Union Square" data-cn="对标Union Square">對標Union Square</span>
+            <span class="prop-tag" data-tw="穩盈精裝資產" data-cn="稳盈精装资产">穩盈精裝資產</span>
+          </div>
+          <div style="margin-top:12px; background:#e8eaf6; border:1px solid #3f51b5; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1a237e; font-weight:600;" data-tw="🏙️ 琴澳終章・天茗封藏｜十字門壓軸地塊 對標九龍站 Union Square" data-cn="🏙️ 琴澳终章・天茗封藏｜十字门压轴地块 对标九龙站 Union Square">🏙️ 琴澳終章・天茗封藏｜十字門壓軸地塊 對標九龍站 Union Square</div>
+        </div>
+      </div>
+
+      <!-- 房源 21：中海寰宇天下・寰宇天地（珠海十字門） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="zhonghai-universe-exterior.jpg" alt="中海寰宇天地夜景鳥瞰" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 TOD城軌旁蓋" data-cn="🔥 TOD城轨旁盖">🔥 TOD城軌旁蓋</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="中海寰宇天下・寰宇天地" data-cn="中海寰宇天下・寰宇天地">中海寰宇天下・寰宇天地</div>
+          <div class="prop-loc" data-tw="📍 珠海十字門・城際輕軌旁" data-cn="📍 珠海十字门・城际轻轨旁">📍 珠海十字門・城際輕軌旁</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 65-125㎡</span>" data-cn="洽询最新优惠 <span>/ 65-125㎡</span>">洽詢最新優惠 <span>/ 65-125㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="665戶・精裝・中海物業・70年住宅・270°瞰海" data-cn="665户・精装・中海物业・70年住宅・270°瞰海">665戶・精裝・中海物業・70年住宅・270°瞰海</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="TOD立體微城市" data-cn="TOD立体微城市">TOD立體微城市</span>
+            <span class="prop-tag" data-tw="270°IMAX海景" data-cn="270°IMAX海景">270°IMAX海景</span>
+            <span class="prop-tag" data-tw="3萬㎡商業" data-cn="3万㎡商业">3萬㎡商業</span>
+            <span class="prop-tag" data-tw="中海物業" data-cn="中海物业">中海物業</span>
+          </div>
+          <div style="margin-top:12px; background:#fce4ec; border:1px solid #e91e63; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#880e4f; font-weight:600;" data-tw="🌊 十字門壓軸組團・城軌/商業/自然三合一・五感新住宅" data-cn="🌊 十字门压轴组团・城轨/商业/自然三合一・五感新住宅">🌊 十字門壓軸組團・城軌/商業/自然三合一・五感新住宅</div>
+        </div>
+      </div>
+
+      <!-- 房源 22：格力海岸7期（珠海） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="gree-coast7-exterior.jpg" alt="格力海岸7期鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現樓交付" data-cn="✅ 现楼交付">✅ 現樓交付</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="格力海岸 7期" data-cn="格力海岸 7期">格力海岸 7期</div>
+          <div class="prop-loc" data-tw="📍 珠海格力海岸・一線海景" data-cn="📍 珠海格力海岸・一线海景">📍 珠海格力海岸・一線海景</div>
+          <div class="prop-price">¥2.9萬/㎡ <span data-tw="/ 64-130㎡" data-cn="/ 64-130㎡">/ 64-130㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="4棟720戶・精裝現樓・格力物業・70年產權" data-cn="4栋720户・精装现楼・格力物业・70年产权">4棟720戶・精裝現樓・格力物業・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-3房" data-cn="2-3房">2-3房</span>
+            <span class="prop-tag" data-tw="一線海景" data-cn="一线海景">一線海景</span>
+            <span class="prop-tag" data-tw="格力品牌" data-cn="格力品牌">格力品牌</span>
+            <span class="prop-tag" data-tw="12年收官巨著" data-cn="12年收官巨著">12年收官巨著</span>
+            <span class="prop-tag" data-tw="百萬平山海超體" data-cn="百万平山海超体">百萬平山海超體</span>
+          </div>
+          <div style="margin-top:12px; background:#e0f7fa; border:1px solid #0097a7; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#006064; font-weight:600;" data-tw="🌊 格力12年收官・一線海景精裝現樓・即買即住" data-cn="🌊 格力12年收官・一线海景精装现楼・即买即住">🌊 格力12年收官・一線海景精裝現樓・即買即住</div>
+        </div>
+      </div>
+
+      <!-- 房源 23：格力海岸6期（珠海） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="gree-coast6-exterior.jpg" alt="格力海岸6期鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現樓即住" data-cn="✅ 现楼即住">✅ 現樓即住</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="格力海岸 6期" data-cn="格力海岸 6期">格力海岸 6期</div>
+          <div class="prop-loc" data-tw="📍 珠海格力海岸・濱海一線" data-cn="📍 珠海格力海岸・滨海一线">📍 珠海格力海岸・濱海一線</div>
+          <div class="prop-price">¥3.1萬/㎡起 <span data-tw="/ 57-114㎡" data-cn="/ 57-114㎡">/ 57-114㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="7棟1632戶・精裝現樓・格力物業・70年產權" data-cn="7栋1632户・精装现楼・格力物业・70年产权">7棟1632戶・精裝現樓・格力物業・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-3房" data-cn="2-3房">2-3房</span>
+            <span class="prop-tag" data-tw="濱海一線" data-cn="滨海一线">濱海一線</span>
+            <span class="prop-tag" data-tw="格力品牌" data-cn="格力品牌">格力品牌</span>
+            <span class="prop-tag" data-tw="大型社區" data-cn="大型社区">大型社區</span>
+            <span class="prop-tag" data-tw="最低2.6萬起" data-cn="最低2.6万起">最低2.6萬起</span>
+          </div>
+          <div style="margin-top:12px; background:#e0f7fa; border:1px solid #0097a7; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#006064; font-weight:600;" data-tw="🌊 格力濱海7棟大盤・現樓精裝・最低2.6萬入手一線海景" data-cn="🌊 格力滨海7栋大盘・现楼精装・最低2.6万入手一线海景">🌊 格力濱海7棟大盤・現樓精裝・最低2.6萬入手一線海景</div>
+        </div>
+      </div>
+
+      <!-- 房源 24：鵬瑞・珠澳灣 THE PEARL BAY（珠海） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="pengrui-pearlbay-exterior.jpg" alt="鵬瑞珠澳灣夜景實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="👑 頂級豪宅" data-cn="👑 顶级豪宅">👑 頂級豪宅</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="鵬瑞・珠澳灣 THE PEARL BAY" data-cn="鹏瑞・珠澳湾 THE PEARL BAY">鵬瑞・珠澳灣 THE PEARL BAY</div>
+          <div class="prop-loc" data-tw="📍 珠海三口岸樞紐・港珠澳大橋旁" data-cn="📍 珠海三口岸枢纽・港珠澳大桥旁">📍 珠海三口岸樞紐・港珠澳大橋旁</div>
+          <div class="prop-price" data-tw="650萬起 <span>/ 188-285㎡</span>" data-cn="650万起 <span>/ 188-285㎡</span>">650萬起 <span>/ 188-285㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="T1棟260米・270°港珠澳全景・梁志天+SCDA大師設計" data-cn="T1栋260米・270°港珠澳全景・梁志天+SCDA大师设计">T1棟260米・270°港珠澳全景・梁志天+SCDA大師設計</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="頂級豪宅" data-cn="顶级豪宅">頂級豪宅</span>
+            <span class="prop-tag" data-tw="260米天際停機坪" data-cn="260米天际停机坪">260米天際停機坪</span>
+            <span class="prop-tag" data-tw="270°環幕海景" data-cn="270°环幕海景">270°環幕海景</span>
+            <span class="prop-tag" data-tw="W酒店同源" data-cn="W酒店同源">W酒店同源</span>
+            <span class="prop-tag" data-tw="全球封面資產" data-cn="全球封面资产">全球封面資產</span>
+          </div>
+          <div style="margin-top:12px; background:#ffd700; border:1px solid #b8860b; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#5c3d00; font-weight:600;" data-tw="🏆 珠海版深圳灣1號・世界地標・湾區恒產價值藏品" data-cn="🏆 珠海版深圳湾1号・世界地标・湾区恒产价值藏品">🏆 珠海版深圳灣1號・世界地標・湾區恒產價值藏品</div>
+        </div>
+      </div>
+
+      <!-- 房源 25：正方・南灣首府（珠海南灣） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="nanwan-shoufu-exterior.jpg" alt="正方南灣首府鳥瞰圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 南灣稀缺大平層" data-cn="🔥 南湾稀缺大平层">🔥 南灣稀缺大平層</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="正方・南灣首府" data-cn="正方・南湾首府">正方・南灣首府</div>
+          <div class="prop-loc" data-tw="📍 珠海南灣城芯・靠山臨湖" data-cn="📍 珠海南湾城芯・靠山临湖">📍 珠海南灣城芯・靠山臨湖</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 76-185㎡</span>" data-cn="洽询最新优惠 <span>/ 76-185㎡</span>">洽詢最新優惠 <span>/ 76-185㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="2126戶・大平層+疊墅・正方物業・70年產權" data-cn="2126户・大平层+叠墅・正方物业・70年产权">2126戶・大平層+疊墅・正方物業・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="大平層143-185㎡" data-cn="大平层143-185㎡">大平層143-185㎡</span>
+            <span class="prop-tag" data-tw="湖山雙景" data-cn="湖山双景">湖山雙景</span>
+            <span class="prop-tag" data-tw="香華+文園學區" data-cn="香华+文园学区">香華+文園學區</span>
+            <span class="prop-tag" data-tw="單梯獨戶" data-cn="单梯独户">單梯獨戶</span>
+            <span class="prop-tag" data-tw="杜拉維特精裝" data-cn="杜拉维特精装">杜拉維特精裝</span>
+          </div>
+          <div style="margin-top:12px; background:#f3e5f5; border:1px solid #8e24aa; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#4a148c; font-weight:600;" data-tw="🏔️ 南灣主城稀缺貴地・26米景觀面・岭南風情人文墅區" data-cn="🏔️ 南湾主城稀缺贵地・26米景观面・岭南风情人文墅区">🏔️ 南灣主城稀缺貴地・26米景觀面・岭南風情人文墅區</div>
+        </div>
+      </div>
+
+      <!-- 房源 26：金誠中心（珠海南灣） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="jincheng-center-exterior.jpg" alt="金誠中心透視圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="💼 商務投資首選" data-cn="💼 商务投资首选">💼 商務投資首選</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="金誠中心" data-cn="金诚中心">金誠中心</div>
+          <div class="prop-loc" data-tw="📍 珠海南灣・港珠澳大橋橋頭500米" data-cn="📍 珠海南湾・港珠澳大桥桥头500米">📍 珠海南灣・港珠澳大橋橋頭500米</div>
+          <div class="prop-price" data-tw="45萬起 <span>/ 39-67㎡ 不限購不限貸</span>" data-cn="45万起 <span>/ 39-67㎡ 不限购不限贷</span>">45萬起 <span>/ 39-67㎡ 不限購不限貸</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="22萬㎡商務綜合體・200米天際線・收益8%+" data-cn="22万㎡商务综合体・200米天际线・收益8%+">22萬㎡商務綜合體・200米天際線・收益8%+</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="不限購不限貸" data-cn="不限购不限贷">不限購不限貸</span>
+            <span class="prop-tag" data-tw="橋頭500米" data-cn="桥头500米">橋頭500米</span>
+            <span class="prop-tag" data-tw="200米地標" data-cn="200米地标">200米地標</span>
+            <span class="prop-tag" data-tw="Aedas設計" data-cn="Aedas设计">Aedas設計</span>
+            <span class="prop-tag" data-tw="收益潛力8%+" data-cn="收益潜力8%+">收益潛力8%+</span>
+          </div>
+          <div style="margin-top:12px; background:#e8eaf6; border:1px solid #3949ab; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1a237e; font-weight:600;" data-tw="🏢 港珠澳橋頭南灣200米地標・45萬起入手・不限購不限貸" data-cn="🏢 港珠澳桥头南湾200米地标・45万起入手・不限购不限贷">🏢 港珠澳橋頭南灣200米地標・45萬起入手・不限購不限貸</div>
+        </div>
+      </div>
+
+      <!-- 房源 27：港灣新城（珠海高新區大學城） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="gangwan-newcity-exterior.jpg" alt="港灣新城高新區交通示意" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🎓 北理工學區" data-cn="🎓 北理工学区">🎓 北理工學區</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="港灣新城" data-cn="港湾新城">港灣新城</div>
+          <div class="prop-loc" data-tw="📍 珠海高新區大學城・北理工北側" data-cn="📍 珠海高新区大学城・北理工北侧">📍 珠海高新區大學城・北理工北側</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 71-101㎡</span>" data-cn="洽询最新优惠 <span>/ 71-101㎡</span>">洽詢最新優惠 <span>/ 71-101㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="約100%得房率・中海物業・70年產權・3所985高校環繞" data-cn="约100%得房率・中海物业・70年产权・3所985高校环绕">約100%得房率・中海物業・70年產權・3所985高校環繞</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2+1至3+2房" data-cn="2+1至3+2房">2+1至3+2房</span>
+            <span class="prop-tag" data-tw="北理工附屬學校" data-cn="北理工附属学校">北理工附屬學校</span>
+            <span class="prop-tag" data-tw="100%得房率" data-cn="100%得房率">100%得房率</span>
+            <span class="prop-tag" data-tw="中海物業" data-cn="中海物业">中海物業</span>
+            <span class="prop-tag" data-tw="同等面積多1房" data-cn="同等面积多1房">同等面積多1房</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #43a047; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="📚 珠海大學城3所985高校環繞・北理工附校・5萬㎡東方園林" data-cn="📚 珠海大学城3所985高校环绕・北理工附校・5万㎡东方园林">📚 珠海大學城3所985高校環繞・北理工附校・5萬㎡東方園林</div>
+        </div>
+      </div>
+
+      <!-- 房源 28：恒基・五洲家園（珠海湖心新城） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="wuzhou-garden-exterior.jpg" alt="恒基五洲家園社區園林實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現房在售" data-cn="✅ 现房在售">✅ 現房在售</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="恒基・五洲家園" data-cn="恒基・五洲家园">恒基・五洲家園</div>
+          <div class="prop-loc" data-tw="📍 珠海湖心新城・湖心路1088號" data-cn="📍 珠海湖心新城・湖心路1088号">📍 珠海湖心新城・湖心路1088號</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 52-120㎡</span>" data-cn="洽询最新优惠 <span>/ 52-120㎡</span>">洽詢最新優惠 <span>/ 52-120㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="68萬㎡・4100戶・精裝・高層+別墅・五星物業" data-cn="68万㎡・4100户・精装・高层+别墅・五星物业">68萬㎡・4100戶・精裝・高層+別墅・五星物業</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房+別墅" data-cn="2-4房+别墅">2-4房+別墅</span>
+            <span class="prop-tag" data-tw="鶴洲中心站旁" data-cn="鹤洲中心站旁">鶴洲中心站旁</span>
+            <span class="prop-tag" data-tw="10萬㎡古樹園林" data-cn="10万㎡古树园林">10萬㎡古樹園林</span>
+            <span class="prop-tag" data-tw="雙向300米樓距" data-cn="双向300米楼距">雙向300米樓距</span>
+            <span class="prop-tag" data-tw="五星級物業" data-cn="五星级物业">五星級物業</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #2e7d32; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="🌿 68萬㎡洲際湖畔養生宅邸・10萬㎡古樹園林・內外雙湖" data-cn="🌿 68万㎡洲际湖畔养生宅邸・10万㎡古树园林・内外双湖">🌿 68萬㎡洲際湖畔養生宅邸・10萬㎡古樹園林・內外雙湖</div>
+        </div>
+      </div>
+
+      <!-- 房源 29：恒基・五洲富山園2期（珠海斗門） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="wuzhou-fushan-exterior.jpg" alt="恒基五洲富山園夜景效果圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="💰 1萬元/㎡精裝" data-cn="💰 1万元/㎡精装">💰 1萬元/㎡精裝</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="恒基・五洲富山園2期" data-cn="恒基・五洲富山园2期">恒基・五洲富山園2期</div>
+          <div class="prop-loc" data-tw="📍 珠海斗門・富山工業園・望陽路152號" data-cn="📍 珠海斗门・富山工业园・望阳路152号">📍 珠海斗門・富山工業園・望陽路152號</div>
+          <div class="prop-price">¥1萬/㎡精裝 <span data-tw="/ 75-91㎡ 首付21萬起" data-cn="/ 75-91㎡ 首付21万起">/ 75-91㎡ 首付21萬起</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="568戶・精裝現樓・千億PCB產業園旁・70年產權" data-cn="568户・精装现楼・千亿PCB产业园旁・70年产权">568戶・精裝現樓・千億PCB產業園旁・70年產權</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="首付21萬起" data-cn="首付21万起">首付21萬起</span>
+            <span class="prop-tag" data-tw="千億PCB產業" data-cn="千亿PCB产业">千億PCB產業</span>
+            <span class="prop-tag" data-tw="以租抵供" data-cn="以租抵供">以租抵供</span>
+            <span class="prop-tag" data-tw="御溫泉景點" data-cn="御温泉景点">御溫泉景點</span>
+          </div>
+          <div style="margin-top:12px; background:#fff8e1; border:1px solid #f9a825; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#e65100; font-weight:600;" data-tw="🏭 珠海價值洼地・千億PCB產業園・1萬精裝首付21萬起" data-cn="🏭 珠海价值洼地・千亿PCB产业园・1万精装首付21万起">🏭 珠海價值洼地・千億PCB產業園・1萬精裝首付21萬起</div>
+        </div>
+      </div>
+
+      <!-- 房源 30：坦洲富璟公館（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="fuqing-mansion-exterior.jpg" alt="坦洲富璟公館外觀" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="💰 45萬起可貸款" data-cn="💰 45万起可贷款">💰 45萬起可貸款</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="坦洲富璟公館" data-cn="坦洲富璟公馆">坦洲富璟公館</div>
+          <div class="prop-loc" data-tw="📍 中山坦洲・珠海北CBD・上衝關口旁" data-cn="📍 中山坦洲・珠海北CBD・上冲关口旁">📍 中山坦洲・珠海北CBD・上衝關口旁</div>
+          <div class="prop-price" data-tw="45萬起 <span>/ 27-41㎡ 可貸款</span>" data-cn="45万起 <span>/ 27-41㎡ 可贷款</span>">45萬起 <span>/ 27-41㎡ 可貸款</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="現樓・萬科物業・15分鐘到拱北口岸・穩定收租" data-cn="现楼・万科物业・15分钟到拱北口岸・稳定收租">現樓・萬科物業・15分鐘到拱北口岸・穩定收租</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="小戶型投資" data-cn="小户型投资">小戶型投資</span>
+            <span class="prop-tag" data-tw="萬科物業" data-cn="万科物业">萬科物業</span>
+            <span class="prop-tag" data-tw="左腳珠海右腳中山" data-cn="左脚珠海右脚中山">左腳珠海右腳中山</span>
+            <span class="prop-tag" data-tw="15分鐘拱北口岸" data-cn="15分钟拱北口岸">15分鐘拱北口岸</span>
+            <span class="prop-tag" data-tw="穩定收租" data-cn="稳定收租">穩定收租</span>
+          </div>
+          <div style="margin-top:12px; background:#e3f2fd; border:1px solid #1976d2; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#0d47a1; font-weight:600;" data-tw="🏪 旺中帶輕・灣區必贏・45萬起輕投資穩收租" data-cn="🏪 旺中带轻・湾区必赢・45万起轻投资稳收租">🏪 旺中帶輕・灣區必贏・45萬起輕投資穩收租</div>
+        </div>
+      </div>
+
+      <!-- 房源 31：駿璟峰・境樾（中山三鄉） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="junjingfeng-exterior.jpg" alt="駿璟峰境樾水景大堂實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 精裝現樓" data-cn="✅ 精装现楼">✅ 精裝現樓</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="駿璟峰・境樾" data-cn="骏璟峰・境樾">駿璟峰・境樾</div>
+          <div class="prop-loc" data-tw="📍 中山三鄉・南部新城・高爾夫景豪宅" data-cn="📍 中山三乡・南部新城・高尔夫景豪宅">📍 中山三鄉・南部新城・高爾夫景豪宅</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 89-126㎡</span>" data-cn="洽询最新优惠 <span>/ 89-126㎡</span>">洽詢最新優惠 <span>/ 89-126㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="562戶・精裝現樓・25分鐘港珠澳大橋・四重景觀" data-cn="562户・精装现楼・25分钟港珠澳大桥・四重景观">562戶・精裝現樓・25分鐘港珠澳大橋・四重景觀</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="高爾夫景豪宅" data-cn="高尔夫景豪宅">高爾夫景豪宅</span>
+            <span class="prop-tag" data-tw="25分鐘港珠澳橋" data-cn="25分钟港珠澳桥">25分鐘港珠澳橋</span>
+            <span class="prop-tag" data-tw="湖景+山景" data-cn="湖景+山景">湖景+山景</span>
+            <span class="prop-tag" data-tw="即買即收樓" data-cn="即买即收楼">即買即收樓</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #388e3c; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="⛳ 南部新城唯一高爾夫景豪宅・四重無遮擋景觀・精裝即收" data-cn="⛳ 南部新城唯一高尔夫景豪宅・四重无遮挡景观・精装即收">⛳ 南部新城唯一高爾夫景豪宅・四重無遮擋景觀・精裝即收</div>
+        </div>
+      </div>
+
+      <!-- 房源 32：鴻瑞壹品（中山火炬區） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="hongrui-exterior.jpg" alt="鴻瑞壹品泳池實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="✅ 現房豪裝" data-cn="✅ 现房豪装">✅ 現房豪裝</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="鴻瑞壹品 THE ONE" data-cn="鸿瑞壹品 THE ONE">鴻瑞壹品 THE ONE</div>
+          <div class="prop-loc" data-tw="📍 中山火炬區・中山站1KM・深中通道口" data-cn="📍 中山火炬区・中山站1KM・深中通道口">📍 中山火炬區・中山站1KM・深中通道口</div>
+          <div class="prop-price">¥1.5-1.7萬/㎡ <span data-tw="/ 110-163㎡" data-cn="/ 110-163㎡">/ 110-163㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="2079戶・豪華精裝現房・深圳半島物業・38%綠化" data-cn="2079户・豪华精装现房・深圳半岛物业・38%绿化">2079戶・豪華精裝現房・深圳半島物業・38%綠化</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="深中通道橋頭堡" data-cn="深中通道桥头堡">深中通道橋頭堡</span>
+            <span class="prop-tag" data-tw="前海1/6價" data-cn="前海1/6价">前海1/6價</span>
+            <span class="prop-tag" data-tw="4000㎡皇家會所" data-cn="4000㎡皇家会所">4000㎡皇家會所</span>
+            <span class="prop-tag" data-tw="自帶學校" data-cn="自带学校">自帶學校</span>
+          </div>
+          <div style="margin-top:12px; background:#fce4ec; border:1px solid #c62828; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#b71c1c; font-weight:600;" data-tw="🏆 深中通道橋頭堡・深圳前海1/6價・中山站TOD豪宅現房" data-cn="🏆 深中通道桥头堡・深圳前海1/6价・中山站TOD豪宅现房">🏆 深中通道橋頭堡・深圳前海1/6價・中山站TOD豪宅現房</div>
+        </div>
+      </div>
+
+      <!-- 房源 33：逸駿半島3期（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="yijun-peninsula-exterior.jpg" alt="逸駿半島社區實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔥 3期新加推" data-cn="🔥 3期新加推">🔥 3期新加推</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="逸駿半島 3期" data-cn="逸骏半岛 3期">逸駿半島 3期</div>
+          <div class="prop-loc" data-tw="📍 中山坦洲・50米到珠海・明珠輕軌站旁" data-cn="📍 中山坦洲・50米到珠海・明珠轻轨站旁">📍 中山坦洲・50米到珠海・明珠輕軌站旁</div>
+          <div class="prop-price" data-tw="精裝1萬起 <span>/ 91-131㎡</span>" data-cn="精装1万起 <span>/ 91-131㎡</span>">精裝1萬起 <span>/ 91-131㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="4054戶・萬科睿服務・100%得房率・60萬㎡大城" data-cn="4054户・万科睿服务・100%得房率・60万㎡大城">4054戶・萬科睿服務・100%得房率・60萬㎡大城</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="3-4房" data-cn="3-4房">3-4房</span>
+            <span class="prop-tag" data-tw="50米到珠海" data-cn="50米到珠海">50米到珠海</span>
+            <span class="prop-tag" data-tw="萬科睿服務" data-cn="万科睿服务">萬科睿服務</span>
+            <span class="prop-tag" data-tw="山姆10分鐘" data-cn="山姆10分钟">山姆10分鐘</span>
+            <span class="prop-tag" data-tw="澳門關口15分鐘" data-cn="澳门关口15分钟">澳門關口15分鐘</span>
+          </div>
+          <div style="margin-top:12px; background:#e3f2fd; border:1px solid #1565c0; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#0d47a1; font-weight:600;" data-tw="🏡 60萬㎡坦洲標桿大城・50米到珠海・萬科品質精裝100%得房" data-cn="🏡 60万㎡坦洲标杆大城・50米到珠海・万科品质精装100%得房">🏡 60萬㎡坦洲標桿大城・50米到珠海・萬科品質精裝100%得房</div>
+        </div>
+      </div>
+
+      <!-- 房源 34：珠海北・德瑞花園（中山坦洲） -->
+      <div class="prop-card reveal" data-city="zhongshan">
+        <div class="prop-img">
+          <img src="derui-exterior.jpg" alt="德瑞花園8棟俯瞰效果圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="💰 首付6.5萬起" data-cn="💰 首付6.5万起">💰 首付6.5萬起</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="珠海北・德瑞花園" data-cn="珠海北・德瑞花园">珠海北・德瑞花園</div>
+          <div class="prop-loc" data-tw="📍 中山坦洲・珠海北" data-cn="📍 中山坦洲・珠海北">📍 中山坦洲・珠海北</div>
+          <div class="prop-price" data-tw="43萬起 <span>/ 67-124㎡ 首付6.5萬</span>" data-cn="43万起 <span>/ 67-124㎡ 首付6.5万</span>">43萬起 <span>/ 67-124㎡ 首付6.5萬</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="1070戶・現樓・毛坯+1500元送裝修・深圳半島物業" data-cn="1070户・现楼・毛坯+1500元送装修・深圳半岛物业">1070戶・現樓・毛坯+1500元送裝修・深圳半島物業</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="首付6.5萬" data-cn="首付6.5万">首付6.5萬</span>
+            <span class="prop-tag" data-tw="特價4999起" data-cn="特价4999起">特價4999起</span>
+            <span class="prop-tag" data-tw="2樓送百坪平台" data-cn="2楼送百坪平台">2樓送百坪平台</span>
+            <span class="prop-tag" data-tw="現樓即收" data-cn="现楼即收">現樓即收</span>
+          </div>
+          <div style="margin-top:12px; background:#fff8e1; border:1px solid #ffa000; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#e65100; font-weight:600;" data-tw="🏠 43萬起首付6.5萬・2樓平台贈送120-173㎡・即買即收樓" data-cn="🏠 43万起首付6.5万・2楼平台赠送120-173㎡・即买即收楼">🏠 43萬起首付6.5萬・2樓平台贈送120-173㎡・即買即收樓</div>
+        </div>
+      </div>
+
+      <!-- 房源 35：淺水灣山莊（珠海老香洲） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="qianshuiwan-exterior.jpg" alt="淺水灣山莊大門夜景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🏡 城央稀缺別墅" data-cn="🏡 城央稀缺别墅">🏡 城央稀缺別墅</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="淺水灣山莊 THE PIEDMONT VILLA" data-cn="浅水湾山庄 THE PIEDMONT VILLA">淺水灣山莊 THE PIEDMONT VILLA</div>
+          <div class="prop-loc" data-tw="📍 珠海老香洲主城・情侶路旁・日月貝3KM" data-cn="📍 珠海老香洲主城・情侣路旁・日月贝3KM">📍 珠海老香洲主城・情侶路旁・日月貝3KM</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 173-241㎡別墅</span>" data-cn="洽询最新优惠 <span>/ 173-241㎡别墅</span>">洽詢最新優惠 <span>/ 173-241㎡別墅</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="19棟111戶・現樓毛坯・金地物業・容積率0.97" data-cn="19栋111户・现楼毛坯・金地物业・容积率0.97">19棟111戶・現樓毛坯・金地物業・容積率0.97</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="疊拼+聯排+雙拼" data-cn="叠拼+联排+双拼">疊拼+聯排+雙拼</span>
+            <span class="prop-tag" data-tw="私戶電梯" data-cn="私户电梯">私戶電梯</span>
+            <span class="prop-tag" data-tw="獨立院子" data-cn="独立院子">獨立院子</span>
+            <span class="prop-tag" data-tw="中大五院1.5KM" data-cn="中大五院1.5KM">中大五院1.5KM</span>
+            <span class="prop-tag" data-tw="42%綠化率" data-cn="42%绿化率">42%綠化率</span>
+          </div>
+          <div style="margin-top:12px; background:#ffd700; border:1px solid #b8860b; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#5c3d00; font-weight:600;" data-tw="🏰 珠海主城老香洲城央稀缺別墅・容積率0.97・私戶電梯獨立院" data-cn="🏰 珠海主城老香洲城央稀缺别墅・容积率0.97・私户电梯独立院">🏰 珠海主城老香洲城央稀缺別墅・容積率0.97・私戶電梯獨立院</div>
+        </div>
+      </div>
+
+      <!-- 房源 36：觀宸246（珠海拱北） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="guanchen246-exterior.jpg" alt="觀宸246鳥瞰效果圖" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🔑 拱北口岸1KM" data-cn="🔑 拱北口岸1KM">🔑 拱北口岸1KM</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="觀宸246" data-cn="观宸246">觀宸246</div>
+          <div class="prop-loc" data-tw="📍 珠海拱北・迎賓南路・口岸頭排" data-cn="📍 珠海拱北・迎宾南路・口岸头排">📍 珠海拱北・迎賓南路・口岸頭排</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 65-98㎡</span>" data-cn="洽询最新优惠 <span>/ 65-98㎡</span>">洽詢最新優惠 <span>/ 65-98㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="246戶・中建澳門精工・中海物業・70年住宅・95%得房率" data-cn="246户・中建澳门精工・中海物业・70年住宅・95%得房率">246戶・中建澳門精工・中海物業・70年住宅・95%得房率</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-3房" data-cn="2-3房">2-3房</span>
+            <span class="prop-tag" data-tw="拱北口岸1KM" data-cn="拱北口岸1KM">拱北口岸1KM</span>
+            <span class="prop-tag" data-tw="中建澳門精工" data-cn="中建澳门精工">中建澳門精工</span>
+            <span class="prop-tag" data-tw="中海物業NO.1" data-cn="中海物业NO.1">中海物業NO.1</span>
+            <span class="prop-tag" data-tw="星級酒店大堂" data-cn="星级酒店大堂">星級酒店大堂</span>
+          </div>
+          <div style="margin-top:12px; background:#fff8e1; border:1px solid #f9a825; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#e65100; font-weight:600;" data-tw="🌉 珠澳同城核心・拱北/青茂/港珠澳三口岸環繞・中建澳門精奢住宅" data-cn="🌉 珠澳同城核心・拱北/青茂/港珠澳三口岸环绕・中建澳门精奢住宅">🌉 珠澳同城核心・拱北/青茂/港珠澳三口岸環繞・中建澳門精奢住宅</div>
+        </div>
+      </div>
+
+      <!-- 房源 37：仁恒濱海灣（珠海高新區） -->
+      <div class="prop-card reveal" data-city="zhuhai">
+        <div class="prop-img">
+          <img src="renheng-bay-exterior.jpg" alt="仁恒濱海灣水面倒影實景" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div class="prop-badge" data-tw="🌿 公園景觀大盤" data-cn="🌿 公园景观大盘">🌿 公園景觀大盤</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-name" data-tw="仁恒濱海灣" data-cn="仁恒滨海湾">仁恒濱海灣</div>
+          <div class="prop-loc" data-tw="📍 珠海高新區・中山公園旁・大學城環繞" data-cn="📍 珠海高新区・中山公园旁・大学城环绕">📍 珠海高新區・中山公園旁・大學城環繞</div>
+          <div class="prop-price" data-tw="洽詢最新優惠 <span>/ 64-163㎡</span>" data-cn="洽询最新优惠 <span>/ 64-163㎡</span>">洽詢最新優惠 <span>/ 64-163㎡</span></div>
+          <div style="font-size:0.82rem; color:#888; margin-bottom:10px;" data-tw="2027戶・仁恒精裝・仁恒物業・60萬㎡公園景觀" data-cn="2027户・仁恒精装・仁恒物业・60万㎡公园景观">2027戶・仁恒精裝・仁恒物業・60萬㎡公園景觀</div>
+          <div class="prop-tags">
+            <span class="prop-tag" data-tw="2-4房" data-cn="2-4房">2-4房</span>
+            <span class="prop-tag" data-tw="新加坡仁恒" data-cn="新加坡仁恒">新加坡仁恒</span>
+            <span class="prop-tag" data-tw="一線公園景觀" data-cn="一线公园景观">一線公園景觀</span>
+            <span class="prop-tag" data-tw="中大五院旁" data-cn="中大五院旁">中大五院旁</span>
+            <span class="prop-tag" data-tw="百年古樹庭院" data-cn="百年古树庭院">百年古樹庭院</span>
+          </div>
+          <div style="margin-top:12px; background:#e8f5e9; border:1px solid #2e7d32; border-radius:8px; padding:8px 12px; font-size:0.82rem; color:#1b5e20; font-weight:600;" data-tw="🌊 珠海高新腹地・60萬㎡中山公園一線・新加坡仁恒度假養心大盤" data-cn="🌊 珠海高新腹地・60万㎡中山公园一线・新加坡仁恒度假养心大盘">🌊 珠海高新腹地・60萬㎡中山公園一線・新加坡仁恒度假養心大盤</div>
+        </div>
+      </div>
+
+      </div><!-- end prop-grid -->
+
+      <div style="text-align:center; margin-top: 36px;">
+        <a href="#" onclick="openModal(); return false;" class="btn-primary" style="display:inline-flex;" data-tw="📩 索取完整房源資料" data-cn="📩 索取完整房源资料">📩 索取完整房源資料</a>
+      </div>
+    </div><!-- end region-china -->
+
+    <!-- 泰國 -->
+    <div id="region-thailand" style="display:none;">
+      <div style="text-align:center; padding:60px 0;">
+        <div style="font-size:3rem; margin-bottom:16px;">🇹🇭</div>
+        <h3 style="font-size:1.4rem; color:var(--navy); margin-bottom:10px;" data-tw="泰國房源・即將上架" data-cn="泰国房源・即将上架">泰國房源・即將上架</h3>
+        <p style="color:var(--text-grey); margin-bottom:24px;" data-tw="曼谷、清邁、芭提雅等城市精選房源整理中，敬請期待。" data-cn="曼谷、清迈、芭提雅等城市精选房源整理中，敬请期待。">曼谷、清邁、芭提雅等城市精選房源整理中，敬請期待。</p>
+        <a href="#" onclick="openModal(); return false;" class="btn-primary" style="display:inline-flex;" data-tw="📩 預先登記" data-cn="📩 预先登记">📩 預先登記</a>
+      </div>
+    </div>
+
+    <!-- 越南 -->
+    <div id="region-vietnam" style="display:none;">
+      <div style="text-align:center; padding:60px 0;">
+        <div style="font-size:3rem; margin-bottom:16px;">🇻🇳</div>
+        <h3 style="font-size:1.4rem; color:var(--navy); margin-bottom:10px;" data-tw="越南房源・即將上架" data-cn="越南房源・即将上架">越南房源・即將上架</h3>
+        <p style="color:var(--text-grey); margin-bottom:24px;" data-tw="胡志明市、河內、峴港等城市精選房源整理中，敬請期待。" data-cn="胡志明市、河内、岘港等城市精选房源整理中，敬请期待。">胡志明市、河內、峴港等城市精選房源整理中，敬請期待。</p>
+        <a href="#" onclick="openModal(); return false;" class="btn-primary" style="display:inline-flex;" data-tw="📩 預先登記" data-cn="📩 预先登记">📩 預先登記</a>
+      </div>
+    </div>
+
+    <!-- 日本 -->
+    <div id="region-japan" style="display:none;">
+      <div style="text-align:center; padding:60px 0;">
+        <div style="font-size:3rem; margin-bottom:16px;">🇯🇵</div>
+        <h3 style="font-size:1.4rem; color:var(--navy); margin-bottom:10px;" data-tw="日本房源・即將上架" data-cn="日本房源・即将上架">日本房源・即將上架</h3>
+        <p style="color:var(--text-grey); margin-bottom:24px;" data-tw="東京、大阪、北海道等城市精選房源整理中，敬請期待。" data-cn="东京、大阪、北海道等城市精选房源整理中，敬请期待。">東京、大阪、北海道等城市精選房源整理中，敬請期待。</p>
+        <a href="#" onclick="openModal(); return false;" class="btn-primary" style="display:inline-flex;" data-tw="📩 預先登記" data-cn="📩 预先登记">📩 預先登記</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== STAR MALL HIGHLIGHT ===== -->
+<section style="background: var(--navy); padding: 80px 5%;">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">主打推薦</span>
+      <h2 class="section-title" style="color:#fff;" data-tw="星滙商務中心・口岸稀缺資產" data-cn="星汇商务中心・口岸稀缺资产">星滙商務中心・口岸稀缺資產</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.7);" data-tw="步行10分鐘到澳門，真正的口岸物業。270°一線海景，直線距離100米即到澳門境。" data-cn="步行10分钟到澳门，真正的口岸物业。270°一线海景，直线距离100米即到澳门境。">
+        步行10分鐘到澳門，真正的口岸物業。270°一線海景，直線距離100米即到澳門境。
+      </p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">📍</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="區位優勢" data-cn="区位优势">區位優勢</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="真正口岸物業，步行10分鐘即達澳門，直線距離100米即到澳門，緊鄰拱北商圈核心。" data-cn="真正口岸物业，步行10分钟即达澳门，直线距离100米即到澳门，紧邻拱北商圈核心。">真正口岸物業，步行10分鐘即達澳門，直線距離100米即到澳門，緊鄰拱北商圈核心。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🌊</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="景觀優勢" data-cn="景观优势">景觀優勢</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="頭排景觀視野，270°無任何遮擋海景，可看澳門煙花景，稀缺不可複製。" data-cn="头排景观视野，270°无任何遮挡海景，可看澳门烟花景，稀缺不可复制。">頭排景觀視野，270°無任何遮擋海景，可看澳門煙花景，稀缺不可複製。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🚗</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="政策優勢" data-cn="政策优势">政策優勢</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="單牌車自由往返園區，不受澳門車牌名額限制；專屬跨境口岸通關憑證，避開人流。" data-cn="单牌车自由往返园区，不受澳门车牌名额限制；专属跨境口岸通关凭证，避开人流。">單牌車自由往返園區，不受澳門車牌名額限制；專屬跨境口岸通關憑證，避開人流。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">💰</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="產品優勢" data-cn="产品优势">產品優勢</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="49㎡精裝SOHO，總價約83萬起，面積小總價低，最長可貸20年，送10年車位使用權。" data-cn="49㎡精装SOHO，总价约83万起，面积小总价低，最长可贷20年，送10年车位使用权。">49㎡精裝SOHO，總價約83萬起，面積小總價低，最長可貸20年，送10年車位使用權。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🏪</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="業態多元" data-cn="业态多元">業態多元</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="5000㎡商業配套，引進Food Court、CAFÉ、澳門DTS、月子中心等品牌，可自住出租或委托酒店管理。" data-cn="5000㎡商业配套，引进Food Court、CAFÉ、澳门DTS、月子中心等品牌，可自住出租或委托酒店管理。">5000㎡商業配套，引進Food Court、CAFÉ、澳門DTS、月子中心等品牌，可自住出租或委托酒店管理。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:16px; padding:24px;" class="reveal">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🏨</div>
+        <h3 style="color:var(--gold); font-size:1rem; margin-bottom:8px;" data-tw="甲級管理" data-cn="甲级管理">甲級管理</h3>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7;" data-tw="酒店式SOHO精裝交屋，全天候管家式服務，包括託管租售、清潔保養、行政服務等。" data-cn="酒店式SOHO精装交房，全天候管家式服务，包括托管租售、清洁保养、行政服务等。">酒店式SOHO精裝交屋，全天候管家式服務，包括託管租售、清潔保養、行政服務等。</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#" onclick="openModal(); return false;" class="btn-primary" style="display:inline-flex;" data-tw="📋 預約星滙考察行程" data-cn="📋 预约星汇考察行程">📋 預約星滙考察行程</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOUR STEPS ===== -->
+<section class="tour-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag" data-tw="考察行程" data-cn="考察行程">考察行程</span>
+      <h2 class="section-title" data-tw="4天3夜・看房全攻略" data-cn="4天3夜・看房全攻略">4天3夜・看房全攻略</h2>
+      <p class="section-sub" data-tw="從台灣出發，全程由專業團隊陪同，安心看房、安全回家。" data-cn="从台湾出发，全程由专业团队陪同，安心看房、安全回家。">
+        從台灣出發，全程由專業團隊陪同，安心看房、安全回家。
+      </p>
+    </div>
+    <div class="steps" style="max-width: 640px;">
+      <div class="step reveal">
+        <div class="step-num">D1</div>
+        <div class="step-content">
+          <h3 data-tw="抵達珠海・接機安頓" data-cn="抵达珠海・接机安顿">抵達珠海・接機安頓</h3>
+          <p data-tw="團隊全程接送，入住合作精品酒店，說明行程與注意事項，晚間安排歡迎晚宴交流。" data-cn="团队全程接送，入住合作精品酒店，说明行程与注意事项，晚间安排欢迎晚宴交流。">
+            團隊全程接送，入住合作精品酒店，說明行程與注意事項，晚間安排歡迎晚宴交流。
+          </p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">D2</div>
+        <div class="step-content">
+          <h3 data-tw="重點房源考察・專家講解" data-cn="重点房源考察・专家讲解">重點房源考察・專家講解</h3>
+          <p data-tw="走訪3-4個精選社區，現場參觀樣板房，由兩岸市場專家親自解說投資價值與風險評估。" data-cn="走访3-4个精选社区，现场参观样板房，由两岸市场专家亲自解说投资价值与风险评估。">
+            走訪3-4個精選社區，現場參觀樣板房，由兩岸市場專家親自解說投資價值與風險評估。
+          </p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">D2</div>
+        <div class="step-content">
+          <h3 data-tw="周邊環境・城市探索" data-cn="周边环境・城市探索">周邊環境・城市探索</h3>
+          <p data-tw="體驗珠海生活圈：商場、餐廳、學校、醫院，讓您親身感受珠海居住品質。" data-cn="体验珠海生活圈：商场、餐厅、学校、医院，让您亲身感受珠海居住品质。">
+            體驗珠海生活圈：商場、餐廳、學校、醫院，讓您親身感受珠海居住品質。
+          </p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">D3</div>
+        <div class="step-content">
+          <h3 data-tw="Q&A 諮詢・愉快賦歸" data-cn="Q&A 咨询・愉快赋归">Q&amp;A 諮詢・愉快賦歸</h3>
+          <p data-tw="個別諮詢時間，解答簽約、貸款、台灣人買房法規等問題，下午送機返台。" data-cn="个别咨询时间，解答签约、贷款、台湾人买房法规等问题，下午送机返台。">
+            個別諮詢時間，解答簽約、貸款、台灣人買房法規等問題，下午送機返台。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADVANTAGES ===== -->
+<section style="background: var(--bg-light);">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag" data-tw="我們的優勢" data-cn="我们的优势">我們的優勢</span>
+      <h2 class="section-title" data-tw="為什麼選擇我們帶您看房" data-cn="为什么选择我们带您看房">為什麼選擇我們帶您看房</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-item reveal">
+        <div class="adv-icon">🇹🇼</div>
+        <div class="adv-text">
+          <h3 data-tw="台灣人帶台灣人" data-cn="台湾人带台湾人">台灣人帶台灣人</h3>
+          <p data-tw="同樣的語言、文化背景，理解您的疑慮，以台灣人的角度評估大陸置產風險。" data-cn="同样的语言、文化背景，理解您的疑虑，以台湾人的角度评估大陆置产风险。">同樣的語言、文化背景，理解您的疑慮，以台灣人的角度評估大陸置產風險。</p>
+        </div>
+      </div>
+      <div class="adv-item reveal">
+        <div class="adv-icon">🤝</div>
+        <div class="adv-text">
+          <h3 data-tw="不收考察費・佣金透明" data-cn="不收考察费・佣金透明">不收考察費・佣金透明</h3>
+          <p data-tw="考察行程費用全透明，無隱藏費用，佣金來自開發商，不向買方加收。" data-cn="考察行程费用全透明，无隐藏费用，佣金来自开发商，不向买方加收。">考察行程費用全透明，無隱藏費用，佣金來自開發商，不向買方加收。</p>
+        </div>
+      </div>
+      <div class="adv-item reveal">
+        <div class="adv-icon">⚖️</div>
+        <div class="adv-text">
+          <h3 data-tw="法律合規・安全有保障" data-cn="法律合规・安全有保障">法律合規・安全有保障</h3>
+          <p data-tw="協同兩岸法律專家，確保簽約流程合法合規，台灣人購房權益全程保障。" data-cn="协同两岸法律专家，确保签约流程合法合规，台湾人购房权益全程保障。">協同兩岸法律專家，確保簽約流程合法合規，台灣人購房權益全程保障。</p>
+        </div>
+      </div>
+      <div class="adv-item reveal">
+        <div class="adv-icon">🔄</div>
+        <div class="adv-text">
+          <h3 data-tw="買後持續服務" data-cn="买后持续服务">買後持續服務</h3>
+          <p data-tw="簽約後提供出租代管、稅務諮詢、二次轉售等全週期服務，讓投資輕鬆無憂。" data-cn="签约后提供出租代管、税务咨询、二次转售等全周期服务，让投资轻松无忧。">簽約後提供出租代管、稅務諮詢、二次轉售等全週期服務，讓投資輕鬆無憂。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag" data-tw="立即報名" data-cn="立即报名">立即報名</span>
+      <h2 class="section-title" data-tw="加入下一梯考察團" data-cn="加入下一梯考察团">加入下一梯考察團</h2>
+      <p class="section-sub" data-tw="名額有限，立即聯絡我們預約報名，或加入群組即時獲取最新房源資訊。" data-cn="名额有限，立即联络我们预约报名，或加入群组即时获取最新房源资讯。">
+        名額有限，立即聯絡我們預約報名，或加入群組即時獲取最新房源資訊。
+      </p>
+    </div>
+    <div class="contact-cards reveal">
+      <a href="https://t.me/marxchiang" class="contact-card" target="_blank">
+        <div class="c-icon">✈️</div>
+        <div class="c-label">Telegram</div>
+        <div class="c-val">@marxchiang</div>
+      </a>
+      <div class="contact-card">
+        <div class="c-icon">💬</div>
+        <div class="c-label">WeChat 微信</div>
+        <div class="c-val">marxchiang0918</div>
+      </div>
+      <a href="mailto:lide202508@gmail.com" class="contact-card">
+        <div class="c-icon">📧</div>
+        <div class="c-label">Email</div>
+        <div class="c-val">lide202508@gmail.com</div>
+      </a>
+    </div>
+    <p style="margin-top: 40px; color: rgba(255,255,255,0.45); font-size: 0.82rem;" data-tw="🔔 加入 Telegram 群組，即時接收最新珠海房產資訊與考察團公告" data-cn="🔔 加入 Telegram 群组，即时接收最新珠海房产资讯与考察团公告">
+      🔔 加入 Telegram 群組，即時接收最新珠海房產資訊與考察團公告
+    </p>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="regModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="關閉">×</button>
+    <div class="modal-title">📋 報名考察團</div>
+    <div class="modal-sub">填寫資料後，我們將於 24 小時內與您聯繫</div>
+    <form class="modal-form" action="https://propertytour-form.shangdian2025.workers.dev" method="POST">
+      <input type="hidden" name="_subject" value="【亞洲看房團】新報名申請">
+      <input type="hidden" name="_next" value="https://www.propertytour.asia/?thanks=1">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-group">
+        <label>姓名 *</label>
+        <input type="text" name="姓名" placeholder="請輸入您的姓名" required>
+      </div>
+      <div class="form-group">
+        <label>電話 *</label>
+        <input type="tel" name="電話" placeholder="請輸入電話號碼" required>
+      </div>
+      <div class="form-group">
+        <label>LINE ID</label>
+        <input type="text" name="LINE_ID" placeholder="請輸入 LINE ID">
+      </div>
+      <div class="form-group">
+        <label>感興趣的城市 / 房源</label>
+        <select name="感興趣城市">
+          <option value="">請選擇</option>
+          <option value="珠海">🇨🇳 珠海</option>
+          <option value="中山">🇨🇳 中山</option>
+          <option value="泰國">🇹🇭 泰國</option>
+          <option value="越南">🇻🇳 越南</option>
+          <option value="日本">🇯🇵 日本</option>
+          <option value="尚未決定">尚未決定</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>可以參加考察團的日期</label>
+        <input type="text" name="可以參加日期" placeholder="例：2026 年8-9 月、展期待定…">
+      </div>
+      <div class="form-group">
+        <label>備註</label>
+        <textarea name="備註" placeholder="預算、偏好、其他問題…"></textarea>
+      </div>
+      <button type="submit" class="modal-submit">🚀 送出報名</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p data-tw="© 2026 <strong>立足台灣・亞洲看房團</strong>　|　珠海大灣區首站　|　更多城市即將開放" data-cn="© 2026 <strong>立足台湾・亚洲看房团</strong>　|　珠海大湾区首站　|　更多城市即将开放">
+    © 2026 <strong>立足台灣・亞洲看房團</strong>　|　珠海大灣區首站　|　更多城市即將開放
+  </p>
+</footer>
+
+<script>
+  /* ===== LANG TOGGLE ===== */
+  let currentLang = 'tw';
+  function toggleLang() {
+    currentLang = currentLang === 'tw' ? 'cn' : 'tw';
+    const btn = document.getElementById('langBtn');
+    btn.textContent = currentLang === 'tw' ? '切換簡體' : '切換繁體';
+    document.querySelectorAll('[data-tw]').forEach(el => {
+      const val = el.getAttribute('data-' + currentLang);
+      if (val) el.innerHTML = val;
+    });
+    document.documentElement.lang = currentLang === 'tw' ? 'zh-TW' : 'zh-CN';
+  }
+
+  /* ===== CITY FILTER ===== */
+  function switchCity(city) {
+    ['all','zhuhai','zhongshan'].forEach(c => {
+      document.getElementById('city-' + c).classList.toggle('active', c === city);
+    });
+    document.querySelectorAll('[data-city]').forEach(card => {
+      card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    });
+  }
+
+  /* ===== REGION TABS ===== */
+  function switchRegion(region) {
+    ['china','thailand','vietnam','japan'].forEach(r => {
+      document.getElementById('region-' + r).style.display = r === region ? 'block' : 'none';
+      document.getElementById('tab-' + r).classList.toggle('active', r === region);
+    });
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+  function openModal() {
+    document.getElementById('regModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('regModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('regModal')) closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+  // 顯示感謝訊息
+  if (location.search.includes('thanks=1')) {
+    setTimeout(function() {
+      document.querySelector('.modal-title').textContent = '✅ 報名成功！';
+      document.querySelector('.modal-sub').textContent = '感謝您的報名！我們將於 24 小時內與您聯繫。';
+      document.querySelector('.modal-form').style.display = 'none';
+      openModal();
+    }, 300);
+  }
+</script>
+</body>
+</html>
